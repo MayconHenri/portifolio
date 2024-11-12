@@ -5,8 +5,8 @@ export default {
 </script>
 
 <template>
-  <section>
-    <div class="intro">
+  <section id="sobre">
+    <div class="intro" >
       <h2>FULLSTACK DEVELOPER</h2>
       <h1>Hello, my name is Maycon Henrique</h1>
       <p>
@@ -15,8 +15,10 @@ export default {
         como Vue.js e JavaScript
       </p>
       <div class="buttons">
-        <button class="projects">Projects</button>
-        <button class="linkedin">LinkedIn</button>
+        <button class="projects">Projetos</button>
+        <a href="https://linkedin.com/in/mayconnhenriique/" target="_blank"
+          ><button class="linkedin">LinkedIn</button></a
+        >
       </div>
     </div>
     <div class="container">
@@ -93,7 +95,7 @@ section {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-style: normal;
-  color: #25282B;
+  color: #25282b;
   font-size: 1rem;
   border: none;
   background-color: white;
@@ -103,10 +105,11 @@ section {
 
 .buttons .projects {
   background-color: #828282;
+  color: white;
 }
 
 .buttons .linkedin {
-  border: 1px solid #25282B;
+  border: 1px solid #25282b;
 }
 
 .buttons .linkedin,

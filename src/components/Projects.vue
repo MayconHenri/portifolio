@@ -26,9 +26,9 @@ export default {
 </script>
 
 <template>
-  <section>
+  <section id="projetos">
     <div class="title">
-      <h1>Projects</h1>
+      <h1>Projetos</h1>
       <img src="@/assets/Rectangle19.png" alt="Tarja sobre o nome">
     </div>
     <div class="cards">

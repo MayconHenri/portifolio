@@ -1,23 +1,28 @@
 <template>
-  <Navbar/>
+  <Navbar />
   <Intro />
   <Projects />
   <Contact />
   <Footer />
+  
 </template>
 
 <script>
-import Contact from './components/Contact.vue';
-import Footer from './components/Footer.vue';
-import Intro from './components/Intro.vue';
-import Navbar from './components/Navbar.vue'
-import Projects from './components/Projects.vue';
+import Contact from "./components/Contact.vue"
+import Footer from "./components/Footer.vue"
+import Intro from "./components/Intro.vue"
+import Navbar from "./components/Navbar.vue"
+import Projects from "./components/Projects.vue"
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    Navbar, Intro, Projects, Contact, Footer
-  }
+    Navbar,
+    Intro,
+    Projects,
+    Contact,
+    Footer,
+  },
 }
 </script>
 
@@ -35,4 +40,15 @@ export default {
   padding: 0;
   box-shadow: 0;
 }
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #b3b3b3;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
 </style>

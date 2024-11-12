@@ -11,9 +11,9 @@ export default {
     </div>
     <div class="links">
       <ul>
-        <li><a href="">About</a></li>
-        <li><a href="">Projects</a></li>
-        <li><a href="">Contacts</a></li>
+        <li><a href="#sobre">Sobre Mim</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#contatos">Contatos</a></li>
       </ul>
     </div>
   </nav>
