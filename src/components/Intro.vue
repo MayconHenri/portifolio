@@ -21,25 +21,23 @@ export default {
     </div>
     <div class="container">
       <img src="@/assets/yellow-bg.png" alt="Imagem" class="fixed-image" />
-      <img src="@/assets/avatar1.png" alt="" class="avatar-image" />
+      <img src="@/assets/avatar/avatar1.png" alt="" class="avatar-image" />
     </div>
   </section>
 </template>
 
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 section {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
+
 .fixed-image {
   position: absolute;
   top: 0;
   right: 0;
-  width: 36rem;
+  max-width: 36rem;
   height: auto;
   z-index: -1;
   filter: grayscale(100%);
@@ -54,6 +52,7 @@ section {
   width: 24rem;
   gap: 1rem;
 }
+
 .intro h2 {
   font-family: "Nunito", sans-serif;
   font-weight: 500;
@@ -77,8 +76,10 @@ section {
   text-align: justify;
   color: #828282;
 }
+
 .avatar-image {
-  width: 32rem;
+  max-width: 32rem;
+  z-index: 2;
 }
 
 .buttons {
@@ -86,6 +87,7 @@ section {
   flex-direction: row;
   gap: 0.8rem;
 }
+
 .buttons button {
   padding: 0.4rem 1rem;
   font-family: "Roboto", sans-serif;
@@ -102,15 +104,18 @@ section {
 .buttons .projects {
   background-color: #828282;
 }
+
 .buttons .linkedin {
   border: 1px solid #25282B;
 }
 
-.buttons .linkedin, .buttons .projects {
+.buttons .linkedin,
+.buttons .projects {
   transition: opacity 0.3s ease;
 }
 
-.buttons .linkedin:hover, .buttons .projects:hover {
-  opacity: 0.6; 
+.buttons .linkedin:hover,
+.buttons .projects:hover {
+  opacity: 0.6;
 }
 </style>
