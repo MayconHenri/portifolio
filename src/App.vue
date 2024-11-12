@@ -2,10 +2,12 @@
   <Navbar/>
   <Intro />
   <Projects />
+  <Contact />
   <Footer />
 </template>
 
 <script>
+import Contact from './components/Contact.vue';
 import Footer from './components/Footer.vue';
 import Intro from './components/Intro.vue';
 import Navbar from './components/Navbar.vue'
@@ -14,7 +16,7 @@ import Projects from './components/Projects.vue';
 export default {
   name: 'App',
   components: {
-    Navbar, Intro, Projects, Footer
+    Navbar, Intro, Projects, Contact, Footer
   }
 }
 </script>

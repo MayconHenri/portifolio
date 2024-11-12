@@ -50,5 +50,6 @@ footer {
 .vector{
   width: 100%;
   filter: grayscale(100%);
+  height: 14rem;
 }
 </style>

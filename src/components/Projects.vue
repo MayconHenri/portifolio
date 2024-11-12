@@ -29,10 +29,10 @@ export default {
   <section>
     <div class="title">
       <h1>Projects</h1>
-      <img src="@/assets/Rectangle19.png" alt="Tarja sobre o nome" srcset="">
+      <img src="@/assets/Rectangle19.png" alt="Tarja sobre o nome">
     </div>
     <div class="cards">
-      <div class="card" v-for="(card, index) in CardRows" :key="index">
+      <div class="card" v-for="(card, index) in CardRows" :key="index" :class="{ 'reverse-card': index % 2 !== 0 }">
         <div class="description">
           <h1>{{ card.title }}</h1>
           <p>{{ card.descrption }}</p>
@@ -45,6 +45,7 @@ export default {
     </div>
   </section>
 </template>
+
 
 <style scoped>
 .title {
@@ -82,6 +83,10 @@ export default {
   transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
+.reverse-card {
+  flex-direction: row-reverse;
+}
+
 .card:hover {
   transform: translate(8px, 8px);
 }
@@ -93,7 +98,14 @@ export default {
   border-bottom-right-radius: 8px;
 }
 
-.description{
+.reverse-card .image img {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.description {
   padding: 2rem 4rem;
   display: flex;
   flex-direction: column;
@@ -126,10 +138,7 @@ export default {
   font-family: "Roboto", sans-serif;
 }
 
-
 .description button:hover {
   opacity: 0.6;
 }
-
-
 </style>
