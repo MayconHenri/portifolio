@@ -6,7 +6,9 @@ export default {
 
 <template>
   <nav>
-    <div class="title-name">Maycon Henrique</div>
+    <div class="title-name">
+      <h1>Maycon Henrique</h1>
+    </div>
     <div class="links">
       <ul>
         <li><a href="">About</a></li>
@@ -15,9 +17,7 @@ export default {
       </ul>
     </div>
   </nav>
-  
 </template>
-
 
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap");
@@ -45,9 +45,11 @@ nav {
   font-weight: 700;
   margin-left: 7rem;
 }
+
 .links {
   margin-right: 7rem;
 }
+
 .links ul {
   font-weight: 500;
   display: flex;
@@ -55,5 +57,13 @@ nav {
   gap: 1rem;
 }
 
+.links a, .title-name h1 {
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+}
+
+.links a:hover, .title-name h1:hover {
+  opacity: 0.6; 
+}
 
 </style>

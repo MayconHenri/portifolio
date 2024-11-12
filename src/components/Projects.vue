@@ -20,6 +20,7 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
 .title {
+  margin-top: 2rem;
   text-align: center;
   position: relative;
 }
