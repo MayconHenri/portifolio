@@ -6,22 +6,28 @@ export default {
       CardRows: [
         {
           title: "Teste",
-          descrption: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet voluptates porro adipisci eum accusamus, quibusdam, sit odit mollitia vitae soluta necessitatibus veritatis dolore. Perspiciatis nisi soluta accusamus velit, eveniet autem?",
-          LinkImg: 'https://plus.unsplash.com/premium_photo-1731021470631-255095ce4045?q=80&w=1987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+          descrption:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet voluptates porro adipisci eum accusamus, quibusdam, sit odit mollitia vitae soluta necessitatibus veritatis dolore. Perspiciatis nisi soluta accusamus velit, eveniet autem?",
+          LinkImg:
+            "https://plus.unsplash.com/premium_photo-1731021470631-255095ce4045?q=80&w=1987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         },
         {
           title: "Teste",
-          descrption: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet voluptates porro adipisci eum accusamus, quibusdam, sit odit mollitia vitae soluta necessitatibus veritatis dolore. Perspiciatis nisi soluta accusamus velit, eveniet autem?",
-          LinkImg: 'https://plus.unsplash.com/premium_photo-1731021470631-255095ce4045?q=80&w=1987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+          descrption:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet voluptates porro adipisci eum accusamus, quibusdam, sit odit mollitia vitae soluta necessitatibus veritatis dolore. Perspiciatis nisi soluta accusamus velit, eveniet autem?",
+          LinkImg:
+            "https://plus.unsplash.com/premium_photo-1731021470631-255095ce4045?q=80&w=1987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         },
         {
           title: "Teste",
-          descrption: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet voluptates porro adipisci eum accusamus, quibusdam, sit odit mollitia vitae soluta necessitatibus veritatis dolore. Perspiciatis nisi soluta accusamus velit, eveniet autem?",
-          LinkImg: 'https://plus.unsplash.com/premium_photo-1731021470631-255095ce4045?q=80&w=1987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-        }
-      ]
+          descrption:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet voluptates porro adipisci eum accusamus, quibusdam, sit odit mollitia vitae soluta necessitatibus veritatis dolore. Perspiciatis nisi soluta accusamus velit, eveniet autem?",
+          LinkImg:
+            "https://plus.unsplash.com/premium_photo-1731021470631-255095ce4045?q=80&w=1987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        },
+      ],
     }
-  }
+  },
 }
 </script>
 
@@ -29,23 +35,27 @@ export default {
   <section id="projetos">
     <div class="title">
       <h1>Projetos</h1>
-      <img src="@/assets/Rectangle19.png" alt="Tarja sobre o nome">
+      <img src="@/assets/Rectangle19.png" alt="Tarja sobre o nome" />
     </div>
     <div class="cards">
-      <div class="card" v-for="(card, index) in CardRows" :key="index" :class="{ 'reverse-card': index % 2 !== 0 }">
+      <div
+        class="card"
+        v-for="(card, index) in CardRows"
+        :key="index"
+        :class="{ 'reverse-card': index % 2 !== 0 }"
+      >
         <div class="description">
           <h1>{{ card.title }}</h1>
           <p>{{ card.descrption }}</p>
           <button>View Project</button>
         </div>
         <div class="image">
-          <img :src="card.LinkImg" alt="Imagem do Projeto">
+          <img :src="card.LinkImg" alt="Imagem do Projeto" />
         </div>
       </div>
     </div>
   </section>
 </template>
-
 
 <style scoped>
 section {
@@ -99,8 +109,10 @@ section {
 .image img {
   width: 20rem;
   height: 24rem;
+  object-fit: cover;
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
+  display: block;
 }
 
 .reverse-card .image img {
@@ -108,6 +120,7 @@ section {
   border-bottom-right-radius: 0;
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
+  display: block;
 }
 
 .description {
@@ -123,7 +136,7 @@ section {
   font-family: "Playfair Display", serif;
   font-weight: 700;
   font-size: 1.6rem;
-  color: #25282B;
+  color: #25282b;
 }
 
 .description p {
@@ -133,6 +146,7 @@ section {
 }
 
 .description button {
+  color: #000;
   width: 8rem;
   padding: 0.4rem 1rem;
   border: 1px solid black;
@@ -146,4 +160,89 @@ section {
 .description button:hover {
   opacity: 0.6;
 }
+
+@media (max-width: 1024px) {
+  .card {
+    width: 40rem;
+    height: auto;
+    flex-direction: column;
+  }
+
+  .image img {
+    width: 100%;
+    height: 16rem;
+    border-radius: 0 0 8px 8px;
+    display: block;
+  }
+
+  .reverse-card {
+    flex-direction: column;
+  }
+
+  .reverse-card .image img {
+    border-radius: 0 0 8px 8px;
+  }
+
+  .description {
+    padding: 1.5rem 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: 90%;
+    flex-direction: column;
+  }
+
+  .image img {
+    height: 12rem;
+  }
+
+  .reverse-card .image img {
+    border-radius: 0 0 8px 8px;
+  }
+
+  .description h1 {
+    font-size: 1.4rem;
+  }
+
+  .description p {
+    font-size: 1rem;
+  }
+
+  .description button {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: 80%;
+  }
+
+  .image img {
+    height: 10rem;
+    border-radius: 0 0 8px 8px;
+    display: block;
+  }
+
+  .reverse-card .image img {
+    border-radius: 0 0 8px 8px;
+  }
+
+  .description {
+    padding: 1rem;
+  }
+
+  .description h1 {
+    font-size: 1.2rem;
+  }
+
+  .description p {
+    font-size: 0.9rem;
+  }
+}
+
+
 </style>

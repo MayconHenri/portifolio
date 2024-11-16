@@ -4,7 +4,7 @@
       <h1>Contato</h1>
       <img src="@/assets/Rectangle19.png" alt="Tarja sobre o nome" />
     </div>
-    <div>
+    <div class="container-form">
       <div class="input-group">
         <label for="Name">Nome</label>
         <input type="text" v-model="name" name="Name" id="Name" />
@@ -46,7 +46,6 @@ export default {
       let valid = true
       const toast = useToast()
 
-      // Validação de campos
       if (!this.name) {
         toast.error("Nome é obrigatório.")
         valid = false

@@ -39,7 +39,7 @@ section {
   position: absolute;
   top: 0;
   right: 0;
-  max-width: 36rem;
+  max-width: 40vw;
   height: auto;
   z-index: -1;
   filter: grayscale(100%);
@@ -80,7 +80,8 @@ section {
 }
 
 .avatar-image {
-  max-width: 32rem;
+  max-width: 30vw; 
+  height: auto; 
   z-index: 2;
 }
 
@@ -124,42 +125,56 @@ section {
 
 
 @media (max-width: 600px) {
+  section {
+    flex-direction: column; 
+    align-items: center; 
+    padding-top: 0;
+    flex-direction: column-reverse;
+  }
+
   .fixed-image {
-    max-width: 20rem;
+    max-width: 120%; 
+    margin-bottom: 1rem; 
   }
 
   .avatar-image {
-    max-width: 10rem
+    max-width: 60%; 
+    display: none;
+  }
+
+  .intro {
+    margin: 2rem 1rem; 
+    text-align: center;
+    width: auto; 
+  }
+
+  .buttons {
+    justify-content: center; 
+  }
+  .intro h2 {
+    color: white;
   }
 }
 
 @media (min-width: 600px) and (max-width: 1024px) {
+  section {
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 2rem;
+  }
+
   .fixed-image {
-    max-width: 20rem;
+    max-width: 40vw;
   }
 
   .avatar-image {
-    max-width: 20rem
+    max-width: 25vw;
   }
 
   .intro {
-    margin-top: 2rem;
-    margin-left: 4rem;
-    text-align: left;
-    width: 22rem;
+    margin: 3rem 2rem;
+    text-align: left; 
+    width: 80%;
   }
-
-  .intro h2 {
-    font-size: 1rem;
-  }
-
-  .intro h1 {
-    font-size: 2.4rem;
-  }
-
-  .intro p {
-    font-size: 1rem;
-  }
-  
 }
 </style>

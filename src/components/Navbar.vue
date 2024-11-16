@@ -103,20 +103,19 @@ nav {
 .mobile-menu {
   display: none;
   position: absolute;
-  top: 5rem;
+  top: 3rem;
   left: 0;
   width: 100%;
   background-color: #c6c6c6;
   z-index: 1000;
   text-align: center;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2), 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .mobile-menu li {
   padding-top: 1.2rem;
 }
-.mobile-menu li:first-child {
-  padding-top: 0;
-}
+
 .mobile-menu.open {
   display: block;
 }
