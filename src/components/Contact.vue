@@ -23,7 +23,7 @@
         ></textarea>
       </div>
       <div class="buttons">
-        <button @click="enviarEmail" class="submit">Send</button>
+        <button @click="enviarEmail" class="submit">Enviar</button>
       </div>
     </div>
   </section>
@@ -71,6 +71,10 @@ export default {
       if (this.validarFormulario()) {
         const toast = useToast()
         toast.success("E-mail enviado com sucesso!")
+        this.name = ""
+        this.email = ""
+        this.message = ""
+
         // Implementar envio de e-mail
       }
     },

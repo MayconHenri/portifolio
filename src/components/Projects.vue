@@ -1,35 +1,45 @@
 <script>
+import CookinImg from "@/assets/projects/cookin.png"
+import BlogImg from "@/assets/projects/blog.png"
+import NotasImg from "@/assets/projects/notas.png"
+
 export default {
   name: "Projects",
   data() {
     return {
       CardRows: [
         {
-          title: "Teste",
+          title: "Cookin' Up",
           descrption:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet voluptates porro adipisci eum accusamus, quibusdam, sit odit mollitia vitae soluta necessitatibus veritatis dolore. Perspiciatis nisi soluta accusamus velit, eveniet autem?",
-          LinkImg:
-            "https://plus.unsplash.com/premium_photo-1731021470631-255095ce4045?q=80&w=1987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "Aplicação para entusiastas culinários explorarem novas receitas, utilizando ingredientes disponíveis. Desenvolvido com Vue.js e TypeScript.",
+          LinkImg: CookinImg,
+          link: "https://github.com/MayconHenri/CookinUp"
         },
         {
-          title: "Teste",
+          title: "Blog de Culinária",
           descrption:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet voluptates porro adipisci eum accusamus, quibusdam, sit odit mollitia vitae soluta necessitatibus veritatis dolore. Perspiciatis nisi soluta accusamus velit, eveniet autem?",
-          LinkImg:
-            "https://plus.unsplash.com/premium_photo-1731021470631-255095ce4045?q=80&w=1987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "Blog de culinária desenvolvido com PHP, JavaScript, Bootstrap e um banco de dados para armazenar receitas e dicas gastronômicas.",
+          LinkImg: BlogImg,
+          link: "https://github.com/MayconHenri/BlogCulinaria"
         },
         {
-          title: "Teste",
+          title: "GuardaNotas",
           descrption:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet voluptates porro adipisci eum accusamus, quibusdam, sit odit mollitia vitae soluta necessitatibus veritatis dolore. Perspiciatis nisi soluta accusamus velit, eveniet autem?",
-          LinkImg:
-            "https://plus.unsplash.com/premium_photo-1731021470631-255095ce4045?q=80&w=1987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "Aplicação para salvar notas online. Adicione, edite e exclua suas ideias facilmente com uma interface amigável.",
+          LinkImg: NotasImg,
+          link: "https://github.com/MayconHenri/projeto-todolist"
         },
       ],
     }
   },
+  methods: {
+    goToRepo(link) {
+      window.open(link, "_blank");
+    }
+  }
 }
 </script>
+
 
 <template>
   <section id="projetos">
@@ -47,7 +57,7 @@ export default {
         <div class="description">
           <h1>{{ card.title }}</h1>
           <p>{{ card.descrption }}</p>
-          <button>View Project</button>
+          <button @click="goToRepo(card.link)">View Project</button>
         </div>
         <div class="image">
           <img :src="card.LinkImg" alt="Imagem do Projeto" />
@@ -56,6 +66,7 @@ export default {
     </div>
   </section>
 </template>
+
 
 <style scoped>
 section {
@@ -243,6 +254,4 @@ section {
     font-size: 0.9rem;
   }
 }
-
-
 </style>

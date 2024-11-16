@@ -15,7 +15,7 @@ export default {
         como Vue.js e JavaScript
       </p>
       <div class="buttons">
-        <button class="projects">Projetos</button>
+        <a href="#projetos"><button class="projects">Projetos</button></a>
         <a href="https://linkedin.com/in/mayconnhenriique/" target="_blank"><button
             class="linkedin">LinkedIn</button></a>
       </div>
