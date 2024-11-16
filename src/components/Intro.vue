@@ -6,7 +6,7 @@ export default {
 
 <template>
   <section id="sobre">
-    <div class="intro" >
+    <div class="intro">
       <h2>FULLSTACK DEVELOPER</h2>
       <h1>Hello, my name is Maycon Henrique</h1>
       <p>
@@ -16,9 +16,8 @@ export default {
       </p>
       <div class="buttons">
         <button class="projects">Projetos</button>
-        <a href="https://linkedin.com/in/mayconnhenriique/" target="_blank"
-          ><button class="linkedin">LinkedIn</button></a
-        >
+        <a href="https://linkedin.com/in/mayconnhenriique/" target="_blank"><button
+            class="linkedin">LinkedIn</button></a>
       </div>
     </div>
     <div class="container">
@@ -33,6 +32,7 @@ section {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  padding: 1.5rem 2rem;
 }
 
 .fixed-image {
@@ -120,5 +120,46 @@ section {
 .buttons .linkedin:hover,
 .buttons .projects:hover {
   opacity: 0.6;
+}
+
+
+@media (max-width: 600px) {
+  .fixed-image {
+    max-width: 20rem;
+  }
+
+  .avatar-image {
+    max-width: 10rem
+  }
+}
+
+@media (min-width: 600px) and (max-width: 1024px) {
+  .fixed-image {
+    max-width: 20rem;
+  }
+
+  .avatar-image {
+    max-width: 20rem
+  }
+
+  .intro {
+    margin-top: 2rem;
+    margin-left: 4rem;
+    text-align: left;
+    width: 22rem;
+  }
+
+  .intro h2 {
+    font-size: 1rem;
+  }
+
+  .intro h1 {
+    font-size: 2.4rem;
+  }
+
+  .intro p {
+    font-size: 1rem;
+  }
+  
 }
 </style>

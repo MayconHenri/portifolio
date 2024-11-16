@@ -48,6 +48,11 @@ export default {
 
 
 <style scoped>
+section {
+  background-color: #c6c6c6;
+  padding: 0.4rem 0 6rem;
+}
+
 .title {
   margin-top: 2rem;
   text-align: center;
@@ -61,7 +66,7 @@ export default {
 }
 
 .title img {
-  filter: grayscale(100%);
+  filter: brightness(0) invert(1);
 }
 
 .cards {
