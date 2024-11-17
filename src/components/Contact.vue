@@ -22,6 +22,10 @@
           class="mensagem"
         ></textarea>
       </div>
+      <div
+        class="g-recaptcha"
+        data-sitekey="6LerYIEqAAAAAAiYlfxDNfjEPS6qVW5Xem-bM-F6"
+      ></div>
       <div class="buttons">
         <button @click="enviarEmail" class="submit">Enviar</button>
       </div>
@@ -30,6 +34,7 @@
 </template>
 
 <script>
+import emailjs from "@emailjs/browser"
 import { useToast } from "vue-toastification"
 
 export default {
@@ -46,6 +51,7 @@ export default {
       let valid = true
       const toast = useToast()
 
+      // Verificar se os campos estão preenchidos corretamente
       if (!this.name) {
         toast.error("Nome é obrigatório.")
         valid = false
@@ -64,25 +70,64 @@ export default {
         valid = false
       }
 
+      // Verificar se o reCAPTCHA foi preenchido
+      const recaptchaResponse = grecaptcha.getResponse()
+      if (!recaptchaResponse) {
+        toast.error("Por favor, complete o reCAPTCHA.")
+        valid = false
+      }
+
       return valid
     },
 
     enviarEmail() {
       if (this.validarFormulario()) {
         const toast = useToast()
-        toast.success("E-mail enviado com sucesso!")
-        this.name = ""
-        this.email = ""
-        this.message = ""
 
-        // Implementar envio de e-mail
+        // Obter a resposta do reCAPTCHA
+        const recaptchaResponse = grecaptcha.getResponse()
+
+        // Parâmetros do template que serão enviados para o EmailJS
+        const templateParams = {
+          from_name: this.name,
+          from_email: this.email,
+          message: this.message,
+          recaptcha_response: recaptchaResponse
+        }
+
+        emailjs
+          .send(
+            "service_1qhqg1n",
+            "template_z3e88ec",
+            templateParams,
+            "k-5AmYeSIWiFGDoaO"
+          )
+          .then(
+            () => {
+              toast.success("E-mail enviado com sucesso!")
+              this.name = ""
+              this.email = ""
+              this.message = ""
+            },
+            (error) => {
+              toast.error("Falha no envio. Tente novamente!")
+              console.log("Falha no envio do e-mail:", error.text)
+            }
+          )
       }
     },
+  },
+  mounted() {
+    const script = document.createElement("script")
+    script.src = "https://www.google.com/recaptcha/api.js"
+    document.head.appendChild(script)
   },
 }
 </script>
 
 <style scoped>
+/* Estilos básicos já existentes */
+
 section {
   display: flex;
   flex-direction: column;
@@ -144,6 +189,10 @@ section {
   font-family: "Nunito", sans-serif;
 }
 
+.g-recaptcha {
+  margin-top: 1rem;
+}
+
 .buttons {
   display: flex;
   flex-direction: row;
@@ -174,4 +223,49 @@ section {
 .buttons .submit:hover {
   opacity: 0.6;
 }
+
+
+@media (max-width: 768px) {
+  section {
+    margin-top: 2rem;
+  }
+
+  .title h1 {
+    font-size: 2.2rem;
+  }
+
+  .input-group {
+    width: 90%; 
+    max-width: 24rem; 
+  }
+
+  .input-group input,
+  .input-group textarea {
+    font-size: 0.9rem; 
+  }
+
+  .input-group .mensagem {
+    height: 6rem; 
+  }
+
+  .g-recaptcha {
+    width: 80%;
+  }
+}
+
+@media (max-width: 480px) {
+  .title h1 {
+    font-size: 1.8rem;
+  }
+
+  .input-group input,
+  .input-group textarea {
+    font-size: 0.85rem;
+  }
+
+  .input-group .mensagem {
+    height: 5rem;
+  }
+}
+
 </style>
